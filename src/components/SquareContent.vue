@@ -5,6 +5,7 @@
         <SquareBox
           :index="n"
           :flashing="flash_square.indexOf(n)!=-1"
+          :hasBall="balls.indexOf(n)!=-1"
         ></SquareBox>
       </template>
     </div>
@@ -22,7 +23,8 @@ export default {
   data () {
     return {
       square_length: 9,
-      flash_square: [3,5,9]
+      flash_square: [3,5,9],
+      balls: [1,3,7,9]
     }
   },
 };
@@ -35,8 +37,11 @@ export default {
   display: flex
   flex-direction: column
   justify-content: center
+  overflow: hidden
 .square-content
   display: flex
   flex-wrap: wrap
-  justify-content: space-around
+  justify-content: space-
+  overflow: hidden
+  position: relative
 </style>
