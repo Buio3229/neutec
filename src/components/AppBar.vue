@@ -3,16 +3,30 @@
     <div class="drawer-btn" @click="triggerDrawer">
       三
     </div>
+    <NavigationDrawer :is-open="drawer" @close="closeDrawer"></NavigationDrawer>
   </div>
 </template>
 
 <script>
+import NavigationDrawer from "./NavigationDrawer.vue";
 export default {
   name: "AppBar",
+  components: {
+    NavigationDrawer,
+  },
   data () {
     return {
+      drawer: false,
     }
   },
+  methods: {
+    triggerDrawer(){
+      this.drawer = !this.drawer
+    },
+    closeDrawer(){
+      this.drawer = false
+    }
+  }
 };
 </script>
 <style lang="sass" scoped>
